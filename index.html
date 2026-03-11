@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premier home, kitchen, and bathroom remodeling services. Serving Arlington, TX and surrounding areas with top-tier renovations, commercial finish outs, and more.">
+    <title>Expert Home & Commercial Remodeling | Southern Remodel</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Dark blue
+                        secondary: '#d97706', // Amber/Orange
+                        light: '#f8fafc',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles */
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .hero-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8));
+        }
+        .page-header-overlay {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9));
+        }
+        .section-padding { padding: 5rem 1.5rem; }
+        .page-view { display: none; }
+        .page-view.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light text-gray-800 antialiased pt-20">
+
+    <!-- Section 1: Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-heading font-bold text-primary">Southern<span class="text-secondary">Remodel</span></a>
+                </div>
+                <nav class="hidden md:flex space-x-5 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-primary transition font-medium text-sm">Home</a>
+                    <a href="#bathroom" class="text-gray-600 hover:text-primary transition font-medium text-sm">Bathroom</a>
+                    <a href="#shower" class="text-gray-600 hover:text-primary transition font-medium text-sm">Shower (Arlington)</a>
+                    <a href="#kitchen" class="text-gray-600 hover:text-primary transition font-medium text-sm">Kitchen</a>
+                    <a href="#commercial" class="text-gray-600 hover:text-primary transition font-medium text-sm">Commercial</a>
+                    <a href="#home" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-blue-800 transition font-medium shadow-sm text-sm">All Services</a>
+                </nav>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 pb-4 px-4 shadow-inner max-h-[80vh] overflow-y-auto">
+            <a href="#home" class="block py-3 border-b border-gray-100 text-gray-600">Home</a>
+            <a href="#bathroom" class="block py-3 border-b border-gray-100 text-gray-600">Bathroom Remodeling</a>
+            <a href="#shower" class="block py-3 border-b border-gray-100 text-gray-600">Shower Remodeling Arlington Tx</a>
+            <a href="#kitchen" class="block py-3 border-b border-gray-100 text-gray-600">Kitchen Remodeling</a>
+            <a href="#improvement" class="block py-3 border-b border-gray-100 text-gray-600">Home Improvement</a>
+            <a href="#flip" class="block py-3 border-b border-gray-100 text-gray-600">Investment & Flips</a>
+            <a href="#outdoor" class="block py-3 border-b border-gray-100 text-gray-600">Outdoor Remodeling</a>
+            <a href="#windows" class="block py-3 border-b border-gray-100 text-gray-600">Replacement Windows</a>
+            <a href="#commercial" class="block py-3 border-b border-gray-100 text-gray-600">Commercial Finish Out</a>
+        </div>
+    </header>
+
+    <!-- SPA Content Container -->
+    <main id="app-root">
+
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME PAGE (DEFAULT) -->
+        <!-- ========================================== -->
+        <article id="page-home" class="page-view active">
+            <!-- Hero -->
+            <section class="relative h-[80vh] flex items-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="absolute inset-0 hero-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left z-10 w-full">
+                    <h1 class="text-4xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
+                        Transform Your Home with <br class="hidden md:block"/> <span class="text-secondary">Premium Remodeling</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+                        From luxury kitchens to custom Arlington showers, we bring your vision to life. Trusted professionals delivering exceptional quality and design.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://southernremodel.net/" target="_blank" rel="noopener" class="bg-secondary text-white font-bold py-3 px-8 rounded hover:bg-amber-600 transition shadow-lg text-center">
+                            Get a Free Estimate
+                        </a>
+                        <a href="#bathroom" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-dark transition text-center">
+                            Explore Our Work
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us -->
+            <section class="section-padding bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction and Remodeling professionals" class="rounded-lg shadow-xl w-full object-cover h-96">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2">Who We Are</h2>
+                        <h3 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-6">Dedicated to Elevating Your Living Spaces</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            At <a href="https://southernremodel.net/" target="_blank" class="text-primary font-semibold hover:underline">Southern Remodel</a>, we believe your home should be a perfect reflection of your lifestyle. With years of experience in the construction and renovation industry, we handle everything from minor home improvements to massive commercial finish-outs in Arlington, TX and beyond.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Our commitment to craftsmanship, transparent communication, and timely delivery has made us the go-to contractor. Explore our specific services below to see how we can help.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Grid (Internal Links) -->
+            <section class="section-padding bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Our Core Remodeling Services</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Click on any service to learn more about our comprehensive solutions tailored to your specific needs and budget.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Grid Items routing to internal SPA pages -->
+                        <a href="#bathroom" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&w=600&q=80" alt="Bathroom Remodeling" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Bathroom Remodeling</h3>
+                                <p class="text-gray-600 text-sm">Turn your outdated bathroom into a personal, spa-like sanctuary.</p>
+                            </div>
+                        </a>
+                        <a href="#shower" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1604709177227-3977c3302923?ixlib=rb-4.0.3&w=600&q=80" alt="Shower Remodeling" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Shower Remodeling Arlington Tx</h3>
+                                <p class="text-gray-600 text-sm">Tailored shower solutions, frameless glass, and waterproofing.</p>
+                            </div>
+                        </a>
+                        <a href="#kitchen" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&w=600&q=80" alt="Kitchen Remodeling" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Kitchen Remodeling</h3>
+                                <p class="text-gray-600 text-sm">Redesigning the heart of your home for beauty and functionality.</p>
+                            </div>
+                        </a>
+                        <a href="#improvement" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&w=600&q=80" alt="Home Improvement" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Home Improvement</h3>
+                                <p class="text-gray-600 text-sm">Drywall repair, painting, flooring, and structural updates.</p>
+                            </div>
+                        </a>
+                        <a href="#flip" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=600&q=80" alt="Investment Flip" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Investment Property & Flip</h3>
+                                <p class="text-gray-600 text-sm">Fast, cost-effective remodels to maximize your real estate ROI.</p>
+                            </div>
+                        </a>
+                        <a href="#outdoor" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=600&q=80" alt="Outdoor Remodeling" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Outdoor Remodeling</h3>
+                                <p class="text-gray-600 text-sm">Custom decks, patios, and outdoor kitchens for your backyard.</p>
+                            </div>
+                        </a>
+                        <a href="#windows" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <img src="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?ixlib=rb-4.0.3&w=600&q=80" alt="Replacement Windows" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Replacement Windows</h3>
+                                <p class="text-gray-600 text-sm">Energy-efficient window upgrades to reduce bills and improve looks.</p>
+                            </div>
+                        </a>
+                        <a href="#commercial" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 lg:col-span-2">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&w=800&q=80" alt="Commercial finish out" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Commercial Finish Out</h3>
+                                <p class="text-gray-600 text-sm">Converting bare "white box" spaces into fully functional, branded retail stores or offices.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: BATHROOM REMODELING -->
+        <!-- ========================================== -->
+        <article id="page-bathroom" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Bathroom Remodeling</h1>
+                    <p class="text-xl text-blue-100">Create the Relaxing Oasis You Deserve</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&w=1200&q=80" alt="Bathroom Remodeling Service" class="w-full h-80 object-cover rounded-xl shadow-lg mb-10">
+                    <h2 class="text-3xl font-heading font-bold text-dark mb-6">Expert Bathroom Remodeling Services</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Your bathroom should be a space of tranquility and function. If you're dealing with outdated fixtures, cramped layouts, or poor lighting, our <a href="https://southernremodel.net/" target="_blank" class="text-primary font-bold hover:underline">premier bathroom remodeling</a> team is here to help. We strip the space down to the studs if necessary and rebuild it to your exact specifications.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        We specialize in custom vanities, deep soaking tubs, ambient lighting designs, and intricate tile work. From master baths to small powder rooms, we ensure that every square inch is optimized for storage, luxury, and aesthetics.
+                    </p>
+                    <div class="bg-gray-50 p-8 border-l-4 border-secondary my-8">
+                        <h3 class="text-xl font-bold text-dark mb-4">Our Bathroom Upgrades Include:</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Custom-built cabinetry and floating vanities</li>
+                            <li>High-end plumbing fixtures and hardware</li>
+                            <li>Radiant heated flooring installations</li>
+                            <li>Complete layout reconfiguration for better flow</li>
+                        </ul>
+                    </div>
+                    <a href="https://southernremodel.net/" target="_blank" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded hover:bg-blue-800 transition">Get a Bathroom Estimate</a>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 3: SHOWER REMODELING ARLINGTON TX -->
+        <!-- ========================================== -->
+        <article id="page-shower" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1604709177227-3977c3302923?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Shower Remodeling Arlington Tx</h1>
+                    <p class="text-xl text-blue-100">Custom Walk-In Showers & Enclosures in Arlington</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Are you tired of scrubbing moldy grout lines or dealing with a leaky, cracked shower pan? As the leading experts in <strong>Shower Remodeling in Arlington, TX</strong>, we understand what local homeowners are looking for. We design tailored shower solutions that completely transform your daily routine into a spa-like experience.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 my-10">
+                        <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&w=600&q=80" alt="Frameless Glass Shower" class="rounded-lg shadow-md h-64 w-full object-cover">
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-dark mb-3">Frameless Glass & Rainfall Heads</h3>
+                            <p class="text-gray-600 mb-4">We install heavy-duty, frameless glass enclosures that make your bathroom feel twice as big. Paired with modern rainfall showerheads and body jets, your Arlington home will have the luxury it deserves.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Our specialized team guarantees flawless waterproofing utilizing the latest membranes and sealants, ensuring your new shower will never leak. For top-rated <a href="https://southernremodel.net/" target="_blank" class="text-primary font-bold hover:underline">remodeling services in Arlington</a>, look no further. We offer built-in niches, custom bench seating, and zero-entry accessible shower options.
+                    </p>
+                    <a href="https://southernremodel.net/" target="_blank" class="inline-block bg-secondary text-white font-bold py-3 px-8 rounded hover:bg-amber-600 transition">Contact Our Arlington Experts</a>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: KITCHEN REMODELING -->
+        <!-- ========================================== -->
+        <article id="page-kitchen" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a872f?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Kitchen Remodeling</h1>
+                    <p class="text-xl text-blue-100">The Heart of Your Home, Reimagined</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&w=1200&q=80" alt="Luxury Kitchen Remodel" class="w-full h-80 object-cover rounded-xl shadow-lg mb-10">
+                    <h2 class="text-3xl font-heading font-bold text-dark mb-6">Complete Kitchen Transformations</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        The kitchen is where families gather, meals are prepared, and memories are made. Our top-tier <a href="https://southernremodel.net/" target="_blank" class="text-primary font-bold hover:underline">kitchen remodeling services</a> focus on optimizing your cooking space, improving traffic flow, and creating a stunning visual focal point.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Whether you want to knock down a wall for an open-concept layout or simply update your finishes, our designers work with you to select the perfect granite or quartz countertops, custom shaker or flat-panel cabinetry, and stylish backsplashes.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 my-8 text-center">
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-primary text-xl mb-2">Countertops</h4>
+                            <p class="text-sm text-gray-600">Durable quartz, elegant marble, and premium granite options.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-primary text-xl mb-2">Cabinetry</h4>
+                            <p class="text-sm text-gray-600">Custom soft-close cabinets with pull-out organizers.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-primary text-xl mb-2">Lighting</h4>
+                            <p class="text-sm text-gray-600">Under-cabinet LEDs and stunning pendant fixtures.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 5: HOME IMPROVEMENT -->
+        <!-- ========================================== -->
+        <article id="page-improvement" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Home Improvement</h1>
+                    <p class="text-xl text-blue-100">General Contracting, Repairs, and Property Updates</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Sometimes your home doesn't need a total teardown—it just needs a professional refresh. Our <strong>Home Improvement</strong> services cover everything from repairing damaged drywall to installing brand new hardwood flooring. 
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        We offer interior and exterior painting, baseboard and crown molding installation, room additions, and structural repairs. Maintaining your property ensures it holds its value, and as trusted <a href="https://southernremodel.net/" target="_blank" class="text-primary font-bold hover:underline">general contractors</a>, we approach every small repair with the same dedication to quality as our large-scale remodels.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-lg text-gray-700"><span class="text-secondary text-2xl mr-3">✓</span> Drywall Installation & Repair</li>
+                        <li class="flex items-center text-lg text-gray-700"><span class="text-secondary text-2xl mr-3">✓</span> Hardwood, Laminate & Tile Flooring</li>
+                        <li class="flex items-center text-lg text-gray-700"><span class="text-secondary text-2xl mr-3">✓</span> Interior & Exterior Painting</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 6: INVESTMENT PROPERTY AND FLIP -->
+        <!-- ========================================== -->
+        <article id="page-flip" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Investment Property & Flips</h1>
+                    <p class="text-xl text-blue-100">Maximize Your ROI with Fast, Cost-Effective Remodeling</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-10">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-heading font-bold text-dark mb-4">Built for Investors</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Time is money in real estate. We specialize in fast-paced remodels specifically designed for house flips, rental properties, and BRRRR strategy investments. 
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            We know exactly where to allocate your budget to maximize the After Repair Value (ARV). By utilizing durable, cost-effective materials that look high-end, we help you get the property back on the market quickly and profitably. Connect with our <a href="https://southernremodel.net/" target="_blank" class="text-primary font-bold hover:underline">property investment remodelers</a> to streamline your next flip.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 bg-gray-50 p-6 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-bold text-primary mb-4">Why Investors Trust Us:</h3>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li><strong>Speed:</strong> Accelerated timelines specifically for flippers.</li>
+                            <li><strong>Budget:</strong> Strict adherence to your target budget.</li>
+                            <li><strong>Material Sourcing:</strong> Access to wholesale, durable finishes perfect for rentals.</li>
+                            <li><strong>Curb Appeal:</strong> Focused updates that buyers notice first.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 7: OUTDOOR REMODELING -->
+        <!-- ========================================== -->
+        <article id="page-outdoor" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Outdoor Remodeling</h1>
+                    <p class="text-xl text-blue-100">Elevate Your Backyard and Exterior Living Spaces</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-heading font-bold text-dark mb-6">Bring the Inside, Outside</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed max-w-3xl mx-auto">
+                        In Texas, outdoor living is a year-round privilege. Our outdoor remodeling services extend your usable square footage by transforming basic backyards into stunning entertainment hubs. 
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div class="border border-gray-200 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-primary mb-2">Custom Decks & Patios</h3>
+                            <p class="text-gray-600 text-sm">We build durable wood and composite decks, as well as stamped concrete and paver stone patios built to withstand the elements.</p>
+                        </div>
+                        <div class="border border-gray-200 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-primary mb-2">Outdoor Kitchens</h3>
+                            <p class="text-gray-600 text-sm">Complete with built-in grills, outdoor refrigerators, and weather-resistant granite prep stations.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://southernremodel.net/" target="_blank" class="text-secondary font-bold hover:text-amber-700 transition underline text-lg">Discuss Your Outdoor Project With Us Today</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 8: REPLACEMENT WINDOWS -->
+        <!-- ========================================== -->
+        <article id="page-windows" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503708928676-1cb796a0891e?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Replacement Windows</h1>
+                    <p class="text-xl text-blue-100">Enhance Energy Efficiency and Curb Appeal</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row-reverse gap-10 items-center">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=600&q=80" alt="Beautiful Windows" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-heading font-bold text-dark mb-4">Clear Views, Lower Bills</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Drafty, outdated windows are the number one cause of high AC and heating bills. We provide professional installation of premium replacement windows that insulate your home and add instant exterior charm.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Choose from double-hung, casement, picture, or custom bay windows. Our modern double-pane and Low-E glass options protect your furniture from UV fading while keeping the harsh weather outside where it belongs. Visit <a href="https://southernremodel.net/" target="_blank" class="text-primary hover:underline">Southern Remodel</a> for a comprehensive window consultation.
+                        </p>
+                        <a href="https://southernremodel.net/" target="_blank" class="bg-primary text-white py-2 px-6 rounded hover:bg-blue-800 transition shadow">Request Window Pricing</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- PAGE 9: COMMERCIAL FINISH OUT -->
+        <!-- ========================================== -->
+        <article id="page-commercial" class="page-view">
+            <section class="relative py-24 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&w=1920&q=80');">
+                <div class="absolute inset-0 page-header-overlay"></div>
+                <div class="relative max-w-7xl mx-auto px-4 text-center z-10">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Commercial Finish Out</h1>
+                    <p class="text-xl text-blue-100">Retail, Office, and Restaurant Build-Outs</p>
+                </div>
+            </section>
+            <section class="section-padding bg-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Creating the perfect environment for your business is critical to your operational success. Our <strong>Commercial Finish Out</strong> services are tailored for business owners signing new leases on "white box" or grey shell spaces. We handle the heavy lifting so you can focus on opening your doors.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 text-center mb-10">
+                        <div class="bg-white shadow p-6 rounded-lg border-t-4 border-secondary">
+                            <h4 class="font-bold text-dark text-lg mb-2">Offices</h4>
+                            <p class="text-sm text-gray-500">Conference rooms, open workspaces, breakrooms, and reception areas.</p>
+                        </div>
+                        <div class="bg-white shadow p-6 rounded-lg border-t-4 border-secondary">
+                            <h4 class="font-bold text-dark text-lg mb-2">Retail Stores</h4>
+                            <p class="text-sm text-gray-500">Custom shelving, specialized lighting, fitting rooms, and checkout counters.</p>
+                        </div>
+                        <div class="bg-white shadow p-6 rounded-lg border-t-4 border-secondary">
+                            <h4 class="font-bold text-dark text-lg mb-2">Restaurants</h4>
+                            <p class="text-sm text-gray-500">Commercial kitchens, bar build-outs, ADA compliant bathrooms, and dining zones.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                        We manage spatial planning, permitting, MEP (Mechanical, Electrical, Plumbing) rough-ins, and high-end finishing. Trust your commercial investment with the top <a href="https://southernremodel.net/" target="_blank" class="text-primary hover:underline">commercial contractors</a> in the area.
+                    </p>
+                    <a href="https://southernremodel.net/" target="_blank" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-blue-800 transition text-lg shadow-lg">Start Your Commercial Build</a>
+                </div>
+            </section>
+        </article>
+
+    </main>
+
+    <!-- Global CTA (Visible on all pages) -->
+    <section class="py-16 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-xl text-blue-100 mb-8 font-light">
+                Join hundreds of satisfied clients who trust us with their biggest investments. From a quick shower remodeling in Arlington TX to complete commercial build-outs, we do it right.
+            </p>
+            <a href="https://southernremodel.net/" target="_blank" rel="noopener" class="bg-secondary text-white text-lg font-bold py-4 px-10 rounded-full hover:bg-amber-500 transition shadow-2xl inline-block transform hover:-translate-y-1">
+                Contact Southern Remodel Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 9: Footer -->
+    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#home" class="text-2xl font-heading font-bold text-white mb-4 block">Southern<span class="text-secondary">Remodel</span></a>
+                    <p class="text-sm mb-4 max-w-sm">Your trusted partner for home renovations, bathroom makeovers, kitchen redesigns, and commercial build-outs. Deploying excellence in every project.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">All Services</h4>
+                    <ul class="space-y-2 text-sm flex flex-col">
+                        <a href="#bathroom" class="hover:text-white transition w-fit">Bathroom Remodeling</a>
+                        <a href="#shower" class="hover:text-white transition w-fit">Shower Remodeling Arlington Tx</a>
+                        <a href="#kitchen" class="hover:text-white transition w-fit">Kitchen Remodeling</a>
+                        <a href="#improvement" class="hover:text-white transition w-fit">Home Improvement</a>
+                        <a href="#flip" class="hover:text-white transition w-fit">Investment Property & Flips</a>
+                        <a href="#outdoor" class="hover:text-white transition w-fit">Outdoor Remodeling</a>
+                        <a href="#windows" class="hover:text-white transition w-fit">Replacement Windows</a>
+                        <a href="#commercial" class="hover:text-white transition w-fit">Commercial Finish Out</a>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Get In Touch</h4>
+                    <p class="text-sm mb-4">Ready to start your project? Visit our main website to schedule your free consultation and estimate.</p>
+                    <a href="https://southernremodel.net/" target="_blank" class="text-secondary font-bold hover:text-white transition block">www.southernremodel.net</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-sm text-center flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Southern Remodel. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Powered by premium <a href="https://southernremodel.net/" target="_blank" class="text-gray-300 hover:text-white">Remodeling Contractors</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive SPA Routing Scripts -->
+    <script>
+        // Simple Hash Router for Single Page Application feel
+        function handleRouting() {
+            // Get hash from URL, default to 'home'
+            let hash = window.location.hash.substring(1);
+            if (!hash) hash = 'home';
+
+            // Find all page views and hide them
+            const pages = document.querySelectorAll('.page-view');
+            let targetPage = document.getElementById('page-' + hash);
+            
+            // If the hash doesn't match any page, fallback to home
+            if (!targetPage) {
+                targetPage = document.getElementById('page-home');
+                hash = 'home';
+            }
+
+            // Remove active class from all
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Add active class to target
+            targetPage.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Close mobile menu if open
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Listen for hash changes (clicking links)
+        window.addEventListener('hashchange', handleRouting);
+        
+        // Handle initial load
+        window.addEventListener('load', handleRouting);
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
